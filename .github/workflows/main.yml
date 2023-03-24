@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        broken: ${{ needs.one.outputs.missing }}
+        broken: ''
     steps:
       - name: Output
         run: echo ${{ matrix.broken }}
