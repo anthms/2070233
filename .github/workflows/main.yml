@@ -7,7 +7,6 @@ jobs:
       - name: Test
         run: echo test
   two:
-    needs: one
     runs-on: ubuntu-latest
     strategy:
       matrix:
