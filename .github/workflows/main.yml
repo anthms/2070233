@@ -1,5 +1,10 @@
 name: Push
-on: push
+on:
+  workflow_dispatch:
+    inputs:
+      value:
+        required: true
+        type: string
 jobs:
   one:
     runs-on: ubuntu-latest
@@ -10,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        broken: ''
+        broken: ${{ inputs.value }}
     steps:
       - name: Output
         run: echo ${{ matrix.broken }}
