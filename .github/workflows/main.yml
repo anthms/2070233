@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        broken: ${{ env.value }}
+        broken: ${{ vars.value }}
     steps:
       - name: Output
         run: echo ${{ matrix.broken }}
